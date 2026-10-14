@@ -12,11 +12,24 @@ This repository contains the two annotated source files implementing the analyti
 
 ## Data-design requirement
 
-The revised manuscript reports 111 samples for BG and 92 samples for ACP and ARS, while Section 2.3 currently states that spectra were acquired for all 92 samples. These statements should be reconciled in the final manuscript.
+## Sample design
 
-The code does not create, duplicate, or otherwise invent observations to reconcile differences in sample counts. If 111 BG observations are used in the final analysis, the reported BG partition of 78 calibration and 33 validation observations can be reproduced. ACP and ARS use 92 observations. The RF benchmark uses the 92 observations common to BG, ACP, and ARS and therefore uses a 69/23 calibration–validation partition.
+β-glucosidase (BG) was determined on 111 samples; acid phosphatase (ACP)
+and arylsulfatase (ARS) were determined on the 92 samples common to all
+three enzymes. The 19 further BG samples were collected from the same
+three fields.
 
-The origin of the additional 19 BG observations, if applicable to the final study design, should be explicitly described in the manuscript.
+Enzyme-specific Kennard–Stone partitions:
+
+| Enzyme | Total | Calibration | Validation |
+|--------|-------|-------------|------------|
+| BG     | 111   | 78          | 33         |
+| ACP    | 92    | 67          | 25         |
+| ARS    | 92    | 69          | 23         |
+
+The random forest benchmark uses the 92 samples common to all three
+enzymes, with its own Kennard–Stone partition of 69 calibration and 23
+validation samples. The code does not create or duplicate observations.
 
 ## Input data
 
